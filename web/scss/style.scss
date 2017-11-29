@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "sass/utilities/initial-variables";
+@import "sass/utilities/functions";
+
+$family-sans-serif: "Roboto";
+
+@import "bulma";
+
+.title.is-1 {
+  font-size: 15em;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#animation {
+  margin-top: 70px;
+}

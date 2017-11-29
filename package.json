@@ -1,0 +1,23 @@
+{
+  "name": "LifePanelApp",
+  "version": "1.0.0",
+  "description": "Quantifiable data for your unquantifiable life",
+  "main": "index.js",
+  "scripts": {
+	"start": "gulp && electron .",
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "parzivail",
+  "license": "GPL",
+  "dependencies": {
+  },
+  "devDependencies": {
+	"gulp": "3.9.1",
+	"gulp-concat": "2.6.1",
+	"gulp-sass": "3.1.0",
+	"gulp-uglify": "3.0.0",
+	"gulp-util": "3.0.8",
+	"pump": "1.0.2"
+  }
+}
