@@ -7,6 +7,7 @@ var CTX_WINDOWS = "Windows",
 	CTX_CHROMEOS = "Chrome OS",
 	CTX_FIREFOX = "Firefox",
 	CTX_AZERTY = "AZERTY",
+	CTX_USA = "USA",
 	CTX_GB = "GB",
 	CTX_DEAD = "Dead",
 	CTX_INTLRO = "IntlRo",
@@ -199,7 +200,7 @@ var CTX_WINDOWS = "Windows",
 			context: CTX_FIREFOX
 		}],
 		60: [{
-			name: "<",
+			name: "Less Than Symbol",
 			context: null
 		}],
 		61: [{
@@ -211,7 +212,7 @@ var CTX_WINDOWS = "Windows",
 			context: null
 		}],
 		64: [{
-			name: "@",
+			name: "At Symbol",
 			context: CTX_FIREFOX
 		}],
 		65: [{
@@ -532,19 +533,19 @@ var CTX_WINDOWS = "Windows",
 			context: CTX_DEAD
 		}],
 		160: [{
-			name: "^",
+			name: "Circumflex (^)",
 			context: null
 		}],
 		161: [{
-			name: "!",
+			name: "Exclamation Point",
 			context: null
 		}],
 		163: [{
-			name: "#",
+			name: "Hash",
 			context: null
 		}],
 		164: [{
-			name: "$",
+			name: "Dollar Sign",
 			context: null
 		}],
 		165: [{
@@ -564,7 +565,7 @@ var CTX_WINDOWS = "Windows",
 			context: null
 		}],
 		169: [{
-			name: ")",
+			name: "Close Parenthesis",
 			context: CTX_AZERTY
 		}],
 		170: [{
@@ -627,27 +628,27 @@ var CTX_WINDOWS = "Windows",
 			context: CTX_FIREFOX
 		}],
 		186: [{
-			name: ";",
+			name: "Semicolon",
 			context: null
 		}],
 		187: [{
-			name: "=",
+			name: "Equals",
 			context: null
 		}],
 		188: [{
-			name: ",",
+			name: "Comma",
 			context: null
 		}],
 		189: [{
-			name: "-",
+			name: "Dash",
 			context: null
 		}],
 		190: [{
-			name: ".",
+			name: "Period",
 			context: null
 		}],
 		191: [{
-			name: "/",
+			name: "Forward Slash",
 			context: null
 		}, {
 			name: "ç",
@@ -655,7 +656,7 @@ var CTX_WINDOWS = "Windows",
 		}],
 		192: [{
 			name: "Grave",
-			context: null
+			context: CTX_USA
 		}, {
 			name: "ñ",
 			context: null
@@ -667,7 +668,7 @@ var CTX_WINDOWS = "Windows",
 			context: null
 		}],
 		193: [{
-			name: "/",
+			name: "Forward Slash",
 			context: null
 		}, {
 			name: "ろ",
@@ -678,29 +679,29 @@ var CTX_WINDOWS = "Windows",
 			context: CTX_CHROMEOS
 		}],
 		219: [{
-			name: "[",
+			name: "Open Bracket",
 			context: null
 		}],
 		220: [{
-			name: "\\",
+			name: "Backslash",
 			context: null
 		}],
 		221: [{
-			name: "]",
-			context: null
+			name: "Close Bracket",
+			context: CTX_USA
 		}, {
-			name: "\\",
+			name: "Backslash",
 			context: null
 		}],
 		222: [{
-			name: "'",
-			context: null
+			name: "Single Quote",
+			context: CTX_USA
 		}, {
-			name: "@",
+			name: "At Symbol",
 			context: CTX_GB
 		}],
 		223: [{
-			name: "`",
+			name: "Grave",
 			context: null
 		}],
 		224: [{
