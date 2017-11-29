@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
 	<title>InputDebug</title>
@@ -59,15 +59,9 @@
 	<div class="hero-foot">
 		<nav class="tabs is-boxed is-fullwidth">
 			<div class="container">
-				<ul>
-					<li class="is-active">
-						<a>Keyboard</a>
-					</li>
-					<li>
-						<a>Mouse</a>
-					</li>
-					<li>
-						<a>Controller</a>
+				<ul id="nav">
+					<li v-for="item in nav">
+						<a v-bind:href="item.url">{{ item.title }}</a>
 					</li>
 				</ul>
 			</div>
@@ -77,6 +71,7 @@
 
 <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
 <script src="js/vue.js"></script>
+<script src="js/app.js"></script>
 <script src="js/app_keyboard.js"></script>
 </body>
 </html>
