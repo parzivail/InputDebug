@@ -50,6 +50,8 @@ var keyCodes = {
 
 document.onmousedown = function (evt) {
 	evt = evt || window.event;
+	if (evt.path[0].nodeName === "A")
+		return;
 	app.registerMouse(evt, true);
 	evt.preventDefault();
 };
