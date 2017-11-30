@@ -20,33 +20,33 @@ $message-body-pre-code-background-color: transparent !default
   border-radius: $message-radius
   font-size: $size-normal
   strong
-	color: currentColor
+    color: currentColor
   a:not(.button):not(.tag)
-	color: currentColor
-	text-decoration: underline
+    color: currentColor
+    text-decoration: underline
   // Sizes
   &.is-small
-	font-size: $size-small
+    font-size: $size-small
   &.is-medium
-	font-size: $size-medium
+    font-size: $size-medium
   &.is-large
-	font-size: $size-large
+    font-size: $size-large
   // Colors
   @each $name, $pair in $colors
-	$color: nth($pair, 1)
-	$color-invert: nth($pair, 2)
-	$color-lightning: max((100% - lightness($color)) - 2%, 0%)
-	$color-luminance: colorLuminance($color)
-	$darken-percentage: $color-luminance * 70%
-	$desaturate-percentage: $color-luminance * 30%
-	&.is-#{$name}
-	  background-color: lighten($color, $color-lightning)
-	  .message-header
-		background-color: $color
-		color: $color-invert
-	  .message-body
-		border-color: $color
-		color: desaturate(darken($color, $darken-percentage), $desaturate-percentage)
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    $color-lightning: max((100% - lightness($color)) - 2%, 0%)
+    $color-luminance: colorLuminance($color)
+    $darken-percentage: $color-luminance * 70%
+    $desaturate-percentage: $color-luminance * 30%
+    &.is-#{$name}
+      background-color: lighten($color, $color-lightning)
+      .message-header
+        background-color: $color
+        color: $color-invert
+      .message-body
+        border-color: $color
+        color: desaturate(darken($color, $darken-percentage), $desaturate-percentage)
 
 .message-header
   align-items: center
@@ -59,13 +59,13 @@ $message-body-pre-code-background-color: transparent !default
   padding: $message-header-padding
   position: relative
   .delete
-	flex-grow: 0
-	flex-shrink: 0
-	margin-left: 0.75em
+    flex-grow: 0
+    flex-shrink: 0
+    margin-left: 0.75em
   & + .message-body
-	border-top-left-radius: 0
-	border-top-right-radius: 0
-	border-top: none
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    border-top: none
 
 .message-body
   border: $message-body-border
@@ -74,6 +74,6 @@ $message-body-pre-code-background-color: transparent !default
   padding: $message-body-padding
   code,
   pre
-	background-color: $message-body-pre-background-color
+    background-color: $message-body-pre-background-color
   pre code
-	background-color: $message-body-pre-code-background-color
+    background-color: $message-body-pre-code-background-color

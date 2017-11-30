@@ -18,13 +18,13 @@ $subtitle-strong-weight: $weight-semibold !default
   word-break: break-word
   em,
   span
-	font-weight: inherit
+    font-weight: inherit
   sub
-	font-size: $title-sub-size
+    font-size: $title-sub-size
   sup
-	font-size: $title-sup-size
+    font-size: $title-sup-size
   .tag
-	vertical-align: middle
+    vertical-align: middle
 
 .title
   color: $title-color
@@ -32,17 +32,17 @@ $subtitle-strong-weight: $weight-semibold !default
   font-weight: $title-weight
   line-height: 1.125
   strong
-	color: $title-strong-color
-	font-weight: $title-strong-weight
+    color: $title-strong-color
+    font-weight: $title-strong-weight
   & + .highlight
-	margin-top: -0.75rem
+    margin-top: -0.75rem
   &:not(.is-spaced) + .subtitle
-	margin-top: -1.5rem
+    margin-top: -1.5rem
   // Sizes
   @each $size in $sizes
-	$i: index($sizes, $size)
-	&.is-#{$i}
-	  font-size: $size
+    $i: index($sizes, $size)
+    &.is-#{$i}
+      font-size: $size
 
 .subtitle
   color: $subtitle-color
@@ -50,12 +50,12 @@ $subtitle-strong-weight: $weight-semibold !default
   font-weight: $subtitle-weight
   line-height: 1.25
   strong
-	color: $subtitle-strong-color
-	font-weight: $subtitle-strong-weight
+    color: $subtitle-strong-color
+    font-weight: $subtitle-strong-weight
   &:not(.is-spaced) + .title
-	margin-top: -1.5rem
+    margin-top: -1.5rem
   // Sizes
   @each $size in $sizes
-	$i: index($sizes, $size)
-	&.is-#{$i}
-	  font-size: $size
+    $i: index($sizes, $size)
+    &.is-#{$i}
+      font-size: $size

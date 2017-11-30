@@ -28,11 +28,11 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($black, 0.2)
   margin: $pagination-margin
   // Sizes
   &.is-small
-	font-size: $size-small
+    font-size: $size-small
   &.is-medium
-	font-size: $size-medium
+    font-size: $size-medium
   &.is-large
-	font-size: $size-large
+    font-size: $size-large
 
 .pagination,
 .pagination-list
@@ -60,18 +60,18 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($black, 0.2)
   border-color: $pagination-border-color
   min-width: 2.25em
   &:hover
-	border-color: $pagination-hover-border-color
-	color: $pagination-hover-color
+    border-color: $pagination-hover-border-color
+    color: $pagination-hover-color
   &:focus
-	border-color: $pagination-focus-border-color
+    border-color: $pagination-focus-border-color
   &:active
-	box-shadow: $pagination-shadow-inset
+    box-shadow: $pagination-shadow-inset
   &[disabled]
-	background-color: $pagination-disabled-background-color
-	border-color: $pagination-disabled-border-color
-	box-shadow: none
-	color: $pagination-disabled-color
-	opacity: 0.5
+    background-color: $pagination-disabled-background-color
+    border-color: $pagination-disabled-border-color
+    box-shadow: none
+    color: $pagination-disabled-color
+    opacity: 0.5
 
 .pagination-previous,
 .pagination-next
@@ -81,9 +81,9 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($black, 0.2)
 
 .pagination-link
   &.is-current
-	background-color: $pagination-current-background-color
-	border-color: $pagination-current-border-color
-	color: $pagination-current-color
+    background-color: $pagination-current-background-color
+    border-color: $pagination-current-border-color
+    color: $pagination-current-color
 
 .pagination-ellipsis
   color: $pagination-ellipsis-color
@@ -94,41 +94,41 @@ $pagination-shadow-inset: inset 0 1px 2px rgba($black, 0.2)
 
 +mobile
   .pagination
-	flex-wrap: wrap
+    flex-wrap: wrap
   .pagination-previous,
   .pagination-next
-	flex-grow: 1
-	flex-shrink: 1
+    flex-grow: 1
+    flex-shrink: 1
   .pagination-list
-	li
-	  flex-grow: 1
-	  flex-shrink: 1
+    li
+      flex-grow: 1
+      flex-shrink: 1
 
 +tablet
   .pagination-list
-	flex-grow: 1
-	flex-shrink: 1
-	justify-content: flex-start
-	order: 1
+    flex-grow: 1
+    flex-shrink: 1
+    justify-content: flex-start
+    order: 1
   .pagination-previous
-	order: 2
+    order: 2
   .pagination-next
-	order: 3
+    order: 3
   .pagination
-	justify-content: space-between
-	&.is-centered
-	  .pagination-previous
-		order: 1
-	  .pagination-list
-		justify-content: center
-		order: 2
-	  .pagination-next
-		order: 3
-	&.is-right
-	  .pagination-previous
-		order: 1
-	  .pagination-next
-		order: 2
-	  .pagination-list
-		justify-content: flex-end
-		order: 3
+    justify-content: space-between
+    &.is-centered
+      .pagination-previous
+        order: 1
+      .pagination-list
+        justify-content: center
+        order: 2
+      .pagination-next
+        order: 3
+    &.is-right
+      .pagination-previous
+        order: 1
+      .pagination-next
+        order: 2
+      .pagination-list
+        justify-content: flex-end
+        order: 3
