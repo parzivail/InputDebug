@@ -93,3 +93,5 @@ jspm_packages
 /config.json
 /web/css/style.css
 /node_modules/
+/static/css/
+/static/js/
