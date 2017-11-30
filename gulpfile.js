@@ -36,7 +36,7 @@ gulp.task('sass', function (cb) {
 gulp.task('js', function (cb) {
 	pump([
 			gulp.src(jsSources),
-			uglify(),
+			//uglify(),
 			gulp.dest("static/js"),
 			connect.reload()
 		],

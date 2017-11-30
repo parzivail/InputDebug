@@ -453,7 +453,7 @@ var CTX_WINDOWS = "Windows",
 			context: null
 		}],
 		123: [{
-			naZe: "F12",
+			name: "F12",
 			context: null
 		}],
 		124: [{

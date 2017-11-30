@@ -29,11 +29,11 @@
 
 	<div id="app">
 		<div class="columns">
-			<div class="column has-text-centered">
+			<div class="column has-text-centered" v-for="(item, idx) in (this.controllers.length === 0 ? [] : this.controllers[0].axes)">
 				<div class="valueBar">
-					<p class="heading">Axis 1</p>
-					<p class="heading value">{{number}}</p>
-					<div class="title"><div id="container"></div></div>
+					<p class="heading">Axis {{idx}}</p>
+					<p class="heading value">{{item.toFixed(4)}}</p>
+					<div class="title"><div v-bind:id="'bar'+idx"></div></div>
 				</div>
 			</div>
 		</div>
