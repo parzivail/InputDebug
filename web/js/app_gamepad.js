@@ -8,6 +8,7 @@ var app = new Vue(
 			haveEvents: 'GamepadEvent' in window,
 			haveWebkitEvents: 'WebKitGamepadEvent' in window,
 			controllers: {},
+			number: 0,
 			requestFrame: window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.requestAnimationFrame,
 			scanGamepads: function () {
 				var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
@@ -22,33 +23,25 @@ var app = new Vue(
 				}
 			},
 			updateStatus: function () {
-				this.scangamepads();
-				for (j in this.controllers) {
+				this.scanGamepads();
+				for (var j = 0; j < this.controllers.length; j++) {
 					var controller = this.controllers[j];
-					var d = document.getElementById("controller" + j);
-					var buttons = d.getElementsByClassName("button");
+					var norm = {
+						buttons: {},
+						axes: controller.axes
+					};
 					for (var i = 0; i < controller.buttons.length; i++) {
-						var b = buttons[i];
+						var button = {
+							pressed: false,
+							value: 0
+						};
 						var val = controller.buttons[i];
-						var pressed = val == 1.0;
+						button.pressed = val == 1.0;
 						if (typeof(val) == "object") {
-							pressed = val.pressed;
-							val = val.value;
+							button.pressed = val.pressed;
+							button.val = val.value;
 						}
-						var pct = Math.round(val * 100) + "%";
-						b.style.backgroundSize = pct + " " + pct;
-						if (pressed) {
-							b.className = "button pressed";
-						} else {
-							b.className = "button";
-						}
-					}
-
-					var axes = d.getElementsByClassName("axis");
-					for (var i = 0; i < controller.axes.length; i++) {
-						var a = axes[i];
-						a.innerHTML = i + ": " + controller.axes[i].toFixed(4);
-						a.setAttribute("value", controller.axes[i]);
+						norm.buttons[i] = button;
 					}
 				}
 				this.requestFrame(this.updateStatus);
@@ -95,7 +88,7 @@ var app = new Vue(
 				 */
 				this.requestFrame(this.updateStatus);
 			},
-			disconnectGamepad: function(gamepad) {
+			disconnectGamepad: function (gamepad) {
 				var d = document.getElementById("controller" + gamepad.index);
 				document.body.removeChild(d);
 				delete controllers[gamepad.index];
@@ -109,12 +102,30 @@ var app = new Vue(
 		}
 	});
 
-if (haveEvents) {
-	window.addEventListener("gamepadconnected", connecthandler);
-	window.addEventListener("gamepaddisconnected", disconnecthandler);
-} else if (haveWebkitEvents) {
-	window.addEventListener("webkitgamepadconnected", connecthandler);
-	window.addEventListener("webkitgamepaddisconnected", disconnecthandler);
-} else {
-	setInterval(scangamepads, 500);
-}
+// if (haveEvents) {
+// 	window.addEventListener("gamepadconnected", connecthandler);
+// 	window.addEventListener("gamepaddisconnected", disconnecthandler);
+// } else if (haveWebkitEvents) {
+// 	window.addEventListener("webkitgamepadconnected", connecthandler);
+// 	window.addEventListener("webkitgamepaddisconnected", disconnecthandler);
+// } else {
+// 	setInterval(scangamepads, 500);
+// }
+
+var bar = new ProgressBar.Line(container, {
+	strokeWidth: 5,
+	duration: 100,
+	trailColor: '#eee',
+	svgStyle: null,
+	step: function(state, circle) {
+		var value = circle.value().toFixed(4);
+		app.number = value;
+	}
+});
+
+var truthy = false;
+window.setInterval(function() {
+	truthy = !truthy;
+	bar.animate(truthy ? 0 : 0.5);
+}, 1000);
+

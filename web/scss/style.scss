@@ -19,3 +19,15 @@ $family-sans-serif: "Roboto";
 #animation {
   margin-top: 70px;
 }
+
+.valueBar {
+  max-width: 200px;
+
+  .value {
+	font-family: monospace;
+  }
+
+  .heading {
+	font-size: 1.5rem;
+  }
+}

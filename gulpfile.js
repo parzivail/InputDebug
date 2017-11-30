@@ -13,7 +13,7 @@ require('dotenv').config();
 
 var jsSources = ['web/js/*.js'],
 	sassSources = ['web/scss/style.scss'],
-	htmlSources = ['web/**/*.html'];
+	htmlSources = ['static/**/*.html'];
 
 gulp.task('connect', function() {
 	connect.server({
