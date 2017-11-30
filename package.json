@@ -1,15 +1,14 @@
 {
-  "name": "LifePanelApp",
+  "name": "InputDebug",
   "version": "1.0.0",
-  "description": "Quantifiable data for your unquantifiable life",
+  "description": "If you can use a computer with it, we'll help you sort it out.",
   "main": "index.js",
   "scripts": {
-	"start": "gulp && electron .",
 	"test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "parzivail",
-  "license": "GPL",
+  "license": "GPL-3.0",
   "dependencies": {
   },
   "devDependencies": {
