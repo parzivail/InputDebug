@@ -8,7 +8,13 @@ var app = new Vue(
 		data: {
 			haveEvents: 'GamepadEvent' in window,
 			haveWebkitEvents: 'WebKitGamepadEvent' in window,
-			controllers: [],
+			controllers: [
+				{
+					id: "Dummy Controller",
+					axes: [0, 0.25, 0.75, 1],
+					buttons: [0, 0, 1, 0]
+				}
+			],
 			bars: [],
 			requestFrame: function (cb) {
 				window.requestAnimationFrame(cb);
@@ -28,21 +34,12 @@ var app = new Vue(
 			updateStatus: function () {
 				app.scanGamepads();
 
-				for (var j = 0; j < app.controllers[0].axes.length; j++)
-					app.bars[j].animate(app.controllers[0].axes[j]);
-
 				app.requestFrame(app.updateStatus);
 			},
 			connectGamepad: function (gamepad) {
 				this.controllers.splice(gamepad.index, 1, gamepad);
 
 				if (gamepad.index === 0) {
-					for (var i = 0; i < gamepad.axes.length; i++)
-						this.bars.push(new ProgressBar.Line("#bar" + i, {
-							strokeWidth: 5,
-							duration: 100,
-							trailColor: '#eee'
-						}));
 				}
 
 				this.requestFrame(this.updateStatus);
@@ -59,14 +56,14 @@ var app = new Vue(
 		}
 	});
 
-app.scanGamepads();
-if (app.haveEvents) {
-	window.addEventListener("gamepadconnected", app.connectHandler);
-	window.addEventListener("gamepaddisconnected", app.disconnectHandler);
-} else if (app.haveWebkitEvents) {
-	window.addEventListener("webkitgamepadconnected", app.connectHandler);
-	window.addEventListener("webkitgamepaddisconnected", app.disconnectHandler);
-} else {
-	setInterval(app.scanGamepads, 1000);
-}
-
+// app.scanGamepads();
+// if (app.haveEvents) {
+// 	window.addEventListener("gamepadconnected", app.connectHandler);
+// 	window.addEventListener("gamepaddisconnected", app.disconnectHandler);
+// } else if (app.haveWebkitEvents) {
+// 	window.addEventListener("webkitgamepadconnected", app.connectHandler);
+// 	window.addEventListener("webkitgamepaddisconnected", app.disconnectHandler);
+// } else {
+// 	setInterval(app.scanGamepads, 1000);
+// }
+//
