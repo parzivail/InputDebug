@@ -13,11 +13,11 @@ require('dotenv').config();
 
 var jsSources = ['web/js/*.js'],
 	sassSources = ['web/scss/style.scss'],
-	htmlSources = ['static/**/*.html'];
+	htmlSources = ['docs/**/*.html'];
 
 gulp.task('connect', function() {
 	connect.server({
-		root: 'static',
+		root: 'docs',
 		livereload: true
 	});
 });
@@ -27,7 +27,7 @@ gulp.task('sass', function (cb) {
 			gulp.src(sassSources),
 			sass(),
 			concat('style.css'),
-			gulp.dest("static/css"),
+			gulp.dest("docs/css"),
 			connect.reload()
 		],
 		cb);
@@ -37,7 +37,7 @@ gulp.task('js', function (cb) {
 	pump([
 			gulp.src(jsSources),
 			//uglify(),
-			gulp.dest("static/js"),
+			gulp.dest("docs/js"),
 			connect.reload()
 		],
 		cb);

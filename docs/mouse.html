@@ -16,13 +16,6 @@
 						InputDebug
 					</a>
 				</div>
-				<div id="navbarMenuHeroB" class="navbar-menu">
-					<div class="navbar-end">
-						<a class="navbar-item is-active">
-							About
-						</a>
-					</div>
-				</div>
 			</div>
 		</nav>
 	</div>
@@ -30,36 +23,24 @@
 	<div class="hero-body" id="app">
 		<div class="container has-text-centered">
 			<div class="title is-1">
-				<div v-if="!key.code">
-					<i class="fa fa-keyboard-o" aria-hidden="true"></i>
+				<div v-if="!key.name">
+					<i class="fa fa-mouse-pointer" aria-hidden="true"></i>
 				</div>
-				<div v-if="!!key.code">
+				<div v-if="!!key.name" v-cloak>
 					{{ key.code }}
 				</div>
 			</div>
 			<div class="field is-grouped is-grouped-multiline center" id="tags">
-				<span class="tag is-dark is-large" v-if="!key.names">Press any key.</span>
-				<div class="control" v-for="name in key.names">
-					<div class="tags has-addons" v-if="!!name.context">
-						<span class="tag is-dark is-large">{{ name.name }}</span>
-						<span class="tag is-success is-large">{{ name.context }}</span>
-					</div>
-					<div class="tag is-dark is-large" v-if="!name.context">{{ name.name }}</div>
-				</div>
+				<span class="tag is-dark is-large" v-if="!key.name">Press any button.</span>
+				<div class="tag is-dark is-large" v-if="!!key.name" v-cloak>{{ key.name }}</div>
 			</div>
-			<br/>
-			<br/>
-			<br/>
-			<span class="center icon">
-				<i class="fa fa-dot-circle-o" aria-hidden="true" id="animation"></i>
-			</span>
 		</div>
 	</div>
 
 	<div class="hero-foot">
 		<nav class="tabs is-boxed is-fullwidth">
 			<div class="container">
-				<ul id="nav">
+				<ul id="nav" v-cloak>
 					<li v-for="item in nav">
 						<a v-bind:href="item.url">{{ item.title }}</a>
 					</li>
@@ -69,9 +50,9 @@
 	</div>
 </section>
 
-<script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-<script src="js/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
 <script src="js/app.js"></script>
-<script src="js/app_keyboard.js"></script>
+<script src="js/app_mouse.js"></script>
 </body>
 </html>
